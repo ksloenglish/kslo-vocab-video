@@ -12,6 +12,29 @@ Read the `tts-prompter` skill before the first `generate_speech` call.
 | style, items | `clear, high pitch, bright and cheerful; calm statement with a falling tone at the end` |
 | Pronunciation | Write **"K S Low"** for K S Lo ("Lo" = "low", never "law"). Write "Miss K". ASR shows these as "KS Low" and "Miss Kay", which is correct. |
 
+## British accent, same voice (V9)
+
+Miss K must sound British **and** keep her voice. The voice always stays **Leda**; never change the voice to get the accent.
+Leda is a studio voice catalogued as General American English, so the accent can only be steered, as follows:
+
+1. **`language_code` `en-GB` on every `generate_speech` call**: items, carrier sentences, retakes and regenerated library
+   lines. Never leave it out and never use `en-US`.
+2. **British spelling and wording in the TTS text**: analyse, colour, practise (verb), centre, programme, favourite,
+   organise, travelling. For the generic lines, use British wording (e.g. "brilliant", "revise", "have a go").
+3. **Never write the accent into `style`** ("British accent", "RP" and so on). The `tts-prompter` skill forbids it and it
+   can distort the voice. Keep the fixed style phrases above.
+4. **Listen check on every take**, as well as the falling-tone check. Reject and re-record (or use a carrier sentence)
+   any take with clearly American features:
+   - a strong "r" after vowels ("feature", "latest offer", "bargain", "matter", "for", "car")
+   - a flapped "t" that sounds like "d" ("latest", "matter", "a variety of", "better")
+   - American vowels in words such as "can't", "bath", "staff" (long "ah" in British), "not", "got" (rounded in
+     British), and "privacy" (British "PRIV-", short i)
+   - American stress or forms: "advertisement", "laboratory", "garage", "schedule", "vitamin", "route", "leisure"
+5. If a word keeps sounding American after 3 takes, try a carrier sentence with British context ("In Britain, we say
+   latest.") and extract the word with `extract_take.py`. If that still fails, tell the user which items are affected
+   and ask how to proceed. **Do not switch voices without the user's approval**, because a new voice would also need the
+   library lines re-recorded and every Miss K clip regenerated.
+
 ## Long lines: the library (format v2)
 
 The intro, transition, outro and pop-up lines are **already recorded and lip-matched** in the GitHub library

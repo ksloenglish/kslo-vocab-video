@@ -72,7 +72,8 @@ Unit 1 reference build (`reference/unit1/`; the final MP4 is a release asset).
 4. **Item voice takes** (`voice_and_audio.md`):
    - Make one `generate_speech` call per item, saved to `audio/items_raw/NN.wav`.
    - Run `check_pitch.py` on every take. Re-record rising takes with carrier sentences, then `extract_take.py`.
-   - Listen-check for creaky, swallowed or unclear words.
+   - Listen-check for creaky, swallowed or unclear words, and for American-sounding features (V9: British accent with
+     the same voice Leda, `language_code` `en-GB` on every call, British spelling, never an accent in `style`).
    - Record the picks in `project.json` `item_takes`.
    - Then run `python3 $S/prep_items.py` and `python3 $S/check_loudness.py`.
 5. **Key the library clips.** Run `python3 $S/prep_clips.py` (about 1 minute). Framing comes from the shipped `stab.json`.

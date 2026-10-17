@@ -51,6 +51,7 @@ every new unit. The tag in brackets is where it came from. Where format v2 chang
 | V6 | **All items sound equally loud** ('unique' sounded quieter). [V3 fix 1] |
 | V7 | Long lines have **no stray sounds** (an extra "s" after "K S Lo students") and **no unclear passages** (05:02-05:04 was smeared). [V2 fixes 6-7] |
 | V8 | Miss K says the full phrase, including a leading article ("a variety of"). [V1 note 8] |
+| V9 | **British accent, same voice.** Miss K speaks with a British English accent **while keeping her voice: always studio voice Leda.** Never switch to another voice (including en-GB library voices) to get a stronger accent. That changes Miss K and no longer matches the library clips. Controls: `language_code` `en-GB` on every call, British spelling and wording in the TTS text, and a British-accent listen check on every take (see "British accent" in `voice_and_audio.md`). If the accent is still not British enough, tell the user and ask before changing anything. [2026-10-18] |
 
 ## Miss K's look and motion (details in `missk_clips.md`)
 
