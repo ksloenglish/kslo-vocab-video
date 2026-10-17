@@ -12,28 +12,23 @@ Read the `tts-prompter` skill before the first `generate_speech` call.
 | style, items | `clear, high pitch, bright and cheerful; calm statement with a falling tone at the end` |
 | Pronunciation | Write **"K S Low"** for K S Lo ("Lo" = "low", never "law"). Write "Miss K". ASR shows these as "KS Low" and "Miss Kay", which is correct. |
 
-## British accent, same voice (V9)
+## British pronunciation of words with two pronunciations (V9)
 
-Miss K must sound British **and** keep her voice. The voice always stays **Leda**; never change the voice to get the accent.
-Leda is a studio voice catalogued as General American English, so the accent can only be steered, as follows:
+A strong British accent is **not** needed. Only words with distinct British and American pronunciations must be said
+the British way, for example *privacy* (PRIV-uh-see, short i) and *antisocial* (AN-tee, not AN-tie). Miss K keeps her
+normal voice and settings: Leda, `language_code` `en-GB` on every call, British spelling in the text. **Never switch
+voices** and never write an accent into `style`.
 
-1. **`language_code` `en-GB` on every `generate_speech` call**: items, carrier sentences, retakes and regenerated library
-   lines. Never leave it out and never use `en-US`.
-2. **British spelling and wording in the TTS text**: analyse, colour, practise (verb), centre, programme, favourite,
-   organise, travelling. For the generic lines, use British wording (e.g. "brilliant", "revise", "have a go").
-3. **Never write the accent into `style`** ("British accent", "RP" and so on). The `tts-prompter` skill forbids it and it
-   can distort the voice. Keep the fixed style phrases above.
-4. **Listen check on every take**, as well as the falling-tone check. Reject and re-record (or use a carrier sentence)
-   any take with clearly American features:
-   - a strong "r" after vowels ("feature", "latest offer", "bargain", "matter", "for", "car")
-   - a flapped "t" that sounds like "d" ("latest", "matter", "a variety of", "better")
-   - American vowels in words such as "can't", "bath", "staff" (long "ah" in British), "not", "got" (rounded in
-     British), and "privacy" (British "PRIV-", short i)
-   - American stress or forms: "advertisement", "laboratory", "garage", "schedule", "vitamin", "route", "leisure"
-5. If a word keeps sounding American after 3 takes, try a carrier sentence with British context ("In Britain, we say
-   latest.") and extract the word with `extract_take.py`. If that still fails, tell the user which items are affected
-   and ask how to proceed. **Do not switch voices without the user's approval**, because a new voice would also need the
-   library lines re-recorded and every Miss K clip regenerated.
+1. `python3 $S/british_words.py` lists the items containing such words, with the British pronunciation. The list is not
+   exhaustive, so also flag any other item word you know has a distinct British pronunciation. The words also appear in
+   `review_list.md`, so the user sees them during the W5 approval.
+2. Record these items like every other item (own call, falling tone, `check_pitch.py`).
+3. The ASR transcript cannot tell the two pronunciations apart, so **the user must approve these items by ear**. Run
+   `python3 $S/british_words.py --preview`, which writes `output/british_check.mp3` (the chosen takes, in list order).
+   Send it with a blocking `ask` before the render.
+4. If the user hears the American form, re-record with the respelling suggested by `british_words.py` in the TTS text
+   (e.g. "Privvacy.", "Antee-social."), or put the word in a British-context carrier sentence and cut it out with
+   `extract_take.py`. Save it as a new take, update `item_takes`, and re-run the preview until the user approves.
 
 ## Long lines: the library (format v2)
 

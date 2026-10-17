@@ -13,6 +13,7 @@ import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import p, proj, load_items
 from render import clue_sentence, blank_words
+from british_words import flagged
 
 
 def tts_text(it):
@@ -35,6 +36,12 @@ txt = (f"# {proj('title')}: items for approval before recording\n\n"
        "Miss K says each item once, with a falling tone. Please check the wording and the clue sentences.\n\n"
        "| # | Type | Headword (DOCX) | Miss K says | TTS text | Blanks | Clue sentence (thinking screen) |\n"
        "|---|---|---|---|---|---|---|\n" + '\n'.join(rows) + '\n')
+fl = flagged(items)
+if fl:
+    txt += ('\n## Words Miss K will say the British way\n\n'
+            'These words have distinct British and American pronunciations. After recording, you can listen to them '
+            'in `output/british_check.mp3` before they go into the video.\n\n'
+            + '\n'.join(f"- #{it['n']} **{it['display']}**: " + '; '.join(f'{w} = {b}' for w, b, _ in hs) for it, hs in fl) + '\n')
 if warn:
     txt += '\n## To fix before approval\n\n' + '\n'.join('- ' + w for w in warn) + '\n'
 open(out, 'w').write(txt)

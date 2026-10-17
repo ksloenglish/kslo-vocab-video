@@ -72,8 +72,9 @@ Unit 1 reference build (`reference/unit1/`; the final MP4 is a release asset).
 4. **Item voice takes** (`voice_and_audio.md`):
    - Make one `generate_speech` call per item, saved to `audio/items_raw/NN.wav`.
    - Run `check_pitch.py` on every take. Re-record rising takes with carrier sentences, then `extract_take.py`.
-   - Listen-check for creaky, swallowed or unclear words, and for American-sounding features (V9: British accent with
-     the same voice Leda, `language_code` `en-GB` on every call, British spelling, never an accent in `style`).
+   - Listen-check for creaky, swallowed or unclear words.
+   - Words with two pronunciations (V9, e.g. privacy, antisocial) must be British: run `python3 $S/british_words.py
+     --preview` and get the user's approval of `output/british_check.mp3`.
    - Record the picks in `project.json` `item_takes`.
    - Then run `python3 $S/prep_items.py` and `python3 $S/check_loudness.py`.
 5. **Key the library clips.** Run `python3 $S/prep_clips.py` (about 1 minute). Framing comes from the shipped `stab.json`.
@@ -124,6 +125,7 @@ Keep the previous MP4 as `_vN` and name new outputs `_v(N+1)`.
 | `check_pitch.py`, `check_loudness.py`, `contact_sheet.py` | QA: falling tone, loudness, gestures |
 | `build_audio.py`, `finalize.sh` | mix (voice, SFX, ducked music, loudnorm) and render + concat + mux |
 | `youtube_text.py` | YouTube title and description (format in `references/youtube.md`) |
+| `british_words.py` | flags words with distinct British/American pronunciations; `--preview` builds the listening check |
 | `check_prompts.py` | checks every illustration prompt has a creature, the no-text preamble and the style line |
 
 Templates: `brand/logo_white.png` (transparent; never add a backing), `missk/missk_neutral.webp` (neutral keyframe;
