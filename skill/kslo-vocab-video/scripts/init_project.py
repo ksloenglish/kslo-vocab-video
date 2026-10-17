@@ -4,6 +4,8 @@
 usage:
   python3 init_project.py <project_dir> --docx <file.docx> --unit 2 [--level S2]
   python3 init_project.py <project_dir> --csv <file.csv> --unit 2      (columns: headword,pos,definition,zh,sentence)
+  add --title "S3 Unit 4 Useful Words and Phrases" to use the teacher's exact video title (default: "<level> Unit <unit>
+  Useful Words and Phrases"). Levels other than S2 have no DOCX: ask the teacher for the item list AND the title.
 
 What it does
   1. creates the fixed folder layout and copies brand / Miss K / audio templates from the skill
@@ -116,6 +118,7 @@ def main():
     ap.add_argument('project'); ap.add_argument('--docx'); ap.add_argument('--csv')
     ap.add_argument('--unit', required=True); ap.add_argument('--level', default='S2')
     ap.add_argument('--force', action='store_true')
+    ap.add_argument('--title', help="the teacher's exact video title")
     a = ap.parse_args()
     P = os.path.abspath(a.project)
     for d in ('assets/fonts', 'illus', 'audio/vo', 'audio/items_raw', 'audio/items', 'audio/refs', 'audio/aligned',
@@ -172,15 +175,21 @@ def main():
                           slug=re.sub(r'[^a-z]+', '_', disp.lower()).strip('_'), image_prompt='', ask=ak))
     kinds = ''.join('P' if it['is_phrase'] else 'W' for it in items)
     nw = kinds.count('W')
+    title = (a.title or f'{a.level} Unit {a.unit} Useful Words and Phrases').strip()
+    m = re.match(rf'^({re.escape(a.level)}\s+Unit\s+\S+)\s+(.+)$', title, flags=re.I)
+    header = f'{m.group(1)}  \u00b7  {m.group(2)}' if m else title
+    if a.title and not re.search(r'useful words and phrases', title, flags=re.I):
+        print('NOTE custom title: set project.json title_lines (big opening text) and kicker to match it, '
+              'then show the user an opening mockup (W1).')
     proj = dict(level=a.level, unit=str(a.unit),
-                title=f'{a.level} Unit {a.unit} Useful Words and Phrases',
-                header_title=f'{a.level} Unit {a.unit}  \u00b7  Useful Words and Phrases',
+                title=title,
+                header_title=header,
                 kicker=f'{a.level}  \u00b7  UNIT {a.unit}',
                 title_lines=['USEFUL WORDS', 'AND PHRASES'],
                 subtitle='Vocabulary revision for K S Lo students',
                 conclusion_l1="You've revised all {total} words",
                 conclusion_l2=f'and phrases from Unit {a.unit}.',
-                output=f'output/{a.level}_Unit{a.unit}_Useful_Words_and_Phrases.mp4',
+                output='output/' + re.sub(r'[^A-Za-z0-9]+', '_', title).strip('_') + '.mp4',
                 item_gain_extra_db={}, nostretch=[], item_takes={},
                 n_words=nw, n_phrases=len(items) - nw)
     for fn, obj in (('items.json', items), ('project.json', proj)):

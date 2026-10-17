@@ -69,6 +69,7 @@ every new unit. The tag in brackets is where it came from. Where format v2 chang
 | W2 | Ask the user when something is unclear. Suggest improvements, but do not block on them. [brief] |
 | W3 | Deliver a **YouTube title and description** with the video. **Never mention AI, Manus, or "generated".** [after V5] |
 | W5 | **Before generating any item audio, show the user the full list of what Miss K will say** (`review_list.py`: display form, TTS text, blanks, clue sentence) with a blocking `ask`, and wait for approval. Apply corrections, regenerate the list and confirm again if anything changed. [2026-10-17] |
+| W6 | **Levels other than S2 (or items not in the DOCX): ask the teacher for the list of items to feature and the title of the video before starting.** Do not guess either. Use the teacher's title exactly (`init_project.py --title`). [2026-10-17] |
 | W4 | Video model: `seedance-2-5` (4-30 s, 720p) unless the user names another model. [brief] |
 
 ## Format v2: lower production cost (agreed 2026-10-17)

@@ -1,6 +1,6 @@
 ---
 name: kslo-vocab-video
-description: Produce K S Lo English vocabulary revision videos titled like "S2 Unit N Useful Words and Phrases" for HKMA K S Lo College students. Anime tutor Miss K (reusable generic clips from the ksloenglish GitHub library) greets "K S Lo students"; phrases first, then words; each item shows an anime illustration, first-letter blanks, a 3-2-1 film-leader countdown, Miss K's voice with a speaking badge, and a meaning card; encouragement pop-ups every 5 items; K S Lo English branding; YouTube title and description. Use when asked to make a words-and-phrases revision video for any unit of the vocabulary DOCX, or to revise or fix such a video.
+description: Produce K S Lo English vocabulary revision videos titled like "S2 Unit N Useful Words and Phrases" for HKMA K S Lo College students (S2 items from the vocab DOCX; for other levels, ask the teacher for the items and title). Anime tutor Miss K (reusable generic clips from the ksloenglish GitHub library) greets "K S Lo students"; phrases first, then words; each item shows an anime illustration, first-letter blanks, a 3-2-1 film-leader countdown, Miss K's voice with a speaking badge, and a meaning card; encouragement pop-ups every 5 items; K S Lo English branding; YouTube title and description. Use when asked to make a words-and-phrases revision video for any unit of the vocabulary DOCX, or to revise or fix such a video.
 ---
 
 # K S Lo vocab revision video (format v2)
@@ -36,6 +36,20 @@ df -h /home/ubuntu                                  # need about 8 GB free
 If `fetch_assets.sh` cannot reach the repo, ask the user to enable the GitHub integration for an account with access to
 `ksloenglish`. The repo also holds the vocabulary DOCX (`vocab/`), the character design images (`character/`) and the
 Unit 1 reference build (`reference/unit1/`; the final MP4 is a release asset).
+
+## Inputs: ask first
+
+- **S2:** the item list comes from the DOCX in the asset repo (`vocab/`). The title is
+  "S2 Unit N Useful Words and Phrases" unless the teacher gives another one.
+- **Any other level (S1, S3-S6…), or items not in the DOCX: before anything else, ask the teacher (blocking `ask`)
+  for (1) the list of items to feature and (2) the exact title of the video.** Never guess the items or the title.
+  - Each item needs: headword, part of speech, English definition, Chinese meaning and a sample sentence. If any are
+    missing, ask whether the teacher will supply them or wants you to draft them for approval.
+  - Accept a DOCX, an Excel/CSV file or pasted text. Convert it to a CSV with the columns
+    `headword,pos,definition,zh,sentence`, keeping the teacher's order inside phrases and words.
+  - Then run `init_project.py ... --csv items.csv --unit <N> --level <S3> --title "<teacher's title>"`. If the title
+    is not "... Useful Words and Phrases", also set `title_lines` and `kicker` in `project.json`, and show an opening
+    mockup (W1).
 
 ## Workflow
 
