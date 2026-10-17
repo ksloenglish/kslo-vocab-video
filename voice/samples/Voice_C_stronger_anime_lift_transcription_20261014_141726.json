@@ -1,0 +1,32 @@
+{
+  "duration": 11.56,
+  "language": "eng",
+  "segments": [
+    {
+      "start": 0.28,
+      "end": 1.96,
+      "text": "Hello, KS Lowe students."
+    },
+    {
+      "start": 1.96,
+      "end": 4.78,
+      "text": "I'm Miss K, your virtual English tutor."
+    },
+    {
+      "start": 4.78,
+      "end": 5.46,
+      "text": "Ready?"
+    },
+    {
+      "start": 5.46,
+      "end": 6.58,
+      "text": "Let's go."
+    },
+    {
+      "start": 6.58,
+      "end": 11.22,
+      "text": "Embrace, sustainable, be combined with"
+    }
+  ],
+  "full_text": "Hello, KS Lowe students. I'm Miss K, your virtual English tutor. Ready? Let's go. Embrace, sustainable, be combined with"
+}

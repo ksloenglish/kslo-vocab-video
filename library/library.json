@@ -1,0 +1,59 @@
+{
+ "version": 2,
+ "created": "2026-10-17",
+ "voice": "Gemini TTS Leda, en-GB, \"K S Lo\" written as \"K S Low\"",
+ "fps": 24,
+ "note": "clips are retimed (retime_clip.py) so lips follow aligned/<name>.wav exactly; aligned wav = 0.5 s lead + voice; place both at the same start",
+ "clips": {
+  "intro": {
+   "dur": 15.0,
+   "line": "Hello, K S Lo students! I'm Miss K, your virtual English tutor. Let's revise some useful words and phrases together. Look at each picture, think of the answer, and say it out loud before time runs out. Ready? Let's go!",
+   "source": "missk_intro.mp4"
+  },
+  "transition": {
+   "dur": 6.0,
+   "line": "Great job with the phrases! Now let's try some words!",
+   "source": "missk_transition.mp4"
+  },
+  "outro": {
+   "dur": 12.0,
+   "line": "Fantastic work, K S Lo students! Keep revising these words and phrases, and try using them in your writing and speaking. See you next time!",
+   "source": "missk_outro_B.mp4 (wave only on \"See you next time\")"
+  },
+  "pop1": {
+   "dur": 4.0,
+   "line": "Great job! Keep going!",
+   "source": "missk_pop1.mp4"
+  },
+  "pop2": {
+   "dur": 5.0,
+   "line": "You're doing really well. Let's keep going!",
+   "source": "missk_pop2.mp4"
+  },
+  "pop3": {
+   "dur": 4.0,
+   "line": "Nice work! Here come some more.",
+   "source": "missk_pop3.mp4"
+  },
+  "pop4": {
+   "dur": 4.0,
+   "line": "Brilliant! You're on a roll!",
+   "source": "missk_pop4.mp4"
+  },
+  "pop5": {
+   "dur": 5.0,
+   "line": "Keep it up! You've got this!",
+   "source": "missk_pop5.mp4"
+  },
+  "pop6": {
+   "dur": 5.0,
+   "line": "Almost there! Just a few more to go!",
+   "source": "missk_pop2.mp4 lips retimed to the pop6 voice (Seedance refused pop6 audio; regenerate when possible)"
+  },
+  "idle": {
+   "dur": 10.042,
+   "line": null,
+   "source": "missk_idle.mp4"
+  }
+ }
+}

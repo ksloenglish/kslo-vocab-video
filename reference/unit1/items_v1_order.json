@@ -1,0 +1,543 @@
+[
+ {
+  "n": 1,
+  "headword": "embrace",
+  "display": "embrace",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "e_____",
+  "pos": "Verb (v)",
+  "pos_short": "v.",
+  "definition": "to accept sth enthusiastically",
+  "zh": "樂意接納",
+  "sentence": "We are always eager to embrace the latest technology.",
+  "highlight": [
+   "embrace"
+  ],
+  "slug": "embrace",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A cheerful anime teenage girl and her small round fluffy yellow-and-blue electric-type companion creature eagerly welcoming a brand-new glowing futuristic gadget that has just arrived: a sleek holographic tablet and a tiny friendly robot floating out of an opened delivery box in a bright modern classroom. The girl throws her arms wide open with sparkling eyes, and the creature joyfully hugs the new gadget, showing they enthusiastically accept the latest technology. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 2,
+  "headword": "analyse",
+  "display": "analyse",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "a_____",
+  "pos": "Verb (v)",
+  "pos_short": "v.",
+  "definition": "to examine sth in order to discover what it is or contains",
+  "zh": "分析",
+  "sentence": "A packet of white powder was found and police scientists are analysing it.",
+  "highlight": [
+   "analysing"
+  ],
+  "slug": "analyse",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A modern police forensic laboratory with blue lighting. An anime forensic scientist in a white lab coat and safety goggles and a clever owl-like companion creature with large lens-shaped eyes carefully examine a small clear plastic packet of white powder. One sample sits under a microscope, test tubes and a pipette are in use, and a holographic screen shows only abstract molecule diagrams and graphs, showing them closely examining it to discover what it contains. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 3,
+  "headword": "irrelevant",
+  "display": "irrelevant",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "i_____",
+  "pos": "Adjective (adj)",
+  "pos_short": "adj.",
+  "definition": "not related to what is being discussed",
+  "zh": "不相關的",
+  "sentence": "Many people consider politics irrelevant to their lives.",
+  "highlight": [
+   "irrelevant"
+  ],
+  "slug": "irrelevant",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A cosy living room. A relaxed anime teenager and a sleepy cat-like companion creature happily focus on their own hobbies (building a model rocket and watering houseplants) while a television in the background shows a formal political debate with generic speakers at podiums. The teenager shrugs with a bored, uninterested face and turns away from the TV, showing that it has nothing to do with their life. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 4,
+  "headword": "feedback",
+  "display": "feedback",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "f_____",
+  "pos": "Noun (n)",
+  "pos_short": "n.",
+  "definition": "statements of opinion about sth that can tell you if it is successful or liked",
+  "zh": "回饋意見",
+  "sentence": "Have you had any feedback from customers about the new soap?",
+  "highlight": [
+   "feedback"
+  ],
+  "slug": "feedback",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A bright small handmade soap shop. A friendly otter-like shopkeeper companion creature holds up a new bubbly pastel soap bar, while several customers hold up their reactions: some give thumbs-up with smiles, one looks unsure, and floating bubbles above them contain only simple heart, star and smiley-face icons. The shopkeeper listens carefully and takes notes on a blank clipboard. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 5,
+  "headword": "prominent",
+  "display": "prominent",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "p_____",
+  "pos": "Adjective (adj)",
+  "pos_short": "adj.",
+  "definition": "can easily be seen or noticed",
+  "zh": "顯眼的",
+  "sentence": "New books are displayed in a prominent position on tables at the front of the store.",
+  "highlight": [
+   "prominent"
+  ],
+  "slug": "prominent",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: The front entrance of a warm, stylish bookstore. Right at the front, a large display table under a bright spotlight holds tall eye-catching stacks of colourful new books with plain covers. A small bookworm-like companion creature proudly arranges the top book, and shoppers walking in immediately notice the display with surprised, interested faces, while the shelves behind are dim and less noticeable. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 6,
+  "headword": "efficient",
+  "display": "efficient",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "e_____",
+  "pos": "Adjective (adj)",
+  "pos_short": "adj.",
+  "definition": "working quickly and effectively in an organised way",
+  "zh": "效率高的",
+  "sentence": "The city's transport system is one of the most efficient in Asia.",
+  "highlight": [
+   "efficient"
+  ],
+  "slug": "efficient",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A gleaming futuristic Asian harbour city similar to Hong Kong at morning rush hour. A sleek modern train glides perfectly into a clean station, commuters flow smoothly and orderly through the gates in neat lines, and a smart conductor companion creature with a whistle and a tidy uniform signals with a confident smile. Everything moves quickly, smoothly and in an organised way. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 7,
+  "headword": "impression",
+  "display": "impression",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "i_____",
+  "pos": "Noun (n)",
+  "pos_short": "n.",
+  "definition": "an idea or opinion of what something or someone is like",
+  "zh": "印象",
+  "sentence": "When I first met him, I had the impression that he was a shy sort of person.",
+  "highlight": [
+   "impression"
+  ],
+  "slug": "impression",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A school corridor on the first day of term. A cheerful anime girl meets a new classmate for the first time: a boy who blushes, looks down and half hides behind his small shy turtle-like companion creature. Above the girl's head floats a soft thought cloud containing a tiny picture of a turtle hiding inside its shell, showing her first idea that he is a shy person. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 8,
+  "headword": "feature",
+  "display": "feature",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "f_____",
+  "pos": "Verb (v)",
+  "pos_short": "v.",
+  "definition": "to include sb or sth as an important part",
+  "zh": "以...為特色",
+  "sentence": "It's an Australian company whose logo features a red kangaroo.",
+  "highlight": [
+   "features"
+  ],
+  "slug": "feature",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A bright modern Australian company office lobby with a large wall emblem: a bold, simple, stylised red kangaroo silhouette inside a circle, with no lettering at all. An anime employee in a smart suit points proudly at the red kangaroo emblem, which is also printed on a flag and on a staff badge, while a small kangaroo-like companion creature imitates the emblem's pose. Sunny sky and eucalyptus trees through the window. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 9,
+  "headword": "sustainable",
+  "display": "sustainable",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "s_____",
+  "pos": "Adjective (adj)",
+  "pos_short": "adj.",
+  "definition": "able to continue over a period of time",
+  "zh": "可持續的",
+  "sentence": "A large international meeting was held with the aim of promoting sustainable development in all countries.",
+  "highlight": [
+   "sustainable"
+  ],
+  "slug": "sustainable",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A hopeful green future city: solar panels on rooftops, wind turbines on the hills, rooftop gardens, clean rivers, electric trams and bicycles. In the foreground, a diverse group of young people from different countries and friendly leafy plant-type companion creatures plant a tree together on a small globe-shaped garden, showing development that can continue for a long time without harming the planet. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 10,
+  "headword": "economy",
+  "display": "economy",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "e_____",
+  "pos": "Noun (n)",
+  "pos_short": "n.",
+  "definition": "the relationship between trade and the supply of money",
+  "zh": "經濟",
+  "sentence": "Any decrease in tourism could have a serious effect on the local economy.",
+  "highlight": [
+   "economy"
+  ],
+  "slug": "economy",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A split scene of the same street of small local shops in a tourist town. On the left half, it is busy and bright: many tourists with cameras and shopping bags, happy shopkeepers, and gold coins flowing into shops. On the right half, the same street is quiet and grey: almost no tourists, shutters half closed, worried shopkeepers and a sad piggy-bank-like companion creature with only a few coins. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 11,
+  "headword": "bargain",
+  "display": "bargain",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "b_____",
+  "pos": "Noun (n)",
+  "pos_short": "n.",
+  "definition": "sth on sale at a lower price than its true value",
+  "zh": "減價貨品",
+  "sentence": "This coat was half-price — a real bargain.",
+  "highlight": [
+   "bargain"
+  ],
+  "slug": "bargain",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A trendy clothing store during a sale. A delighted anime teenage girl holds up a stylish warm winter coat, and its price tag is literally cut cleanly in half with a pair of scissors held by her excited little fox-like companion creature. She grins proudly as if she has found a fantastic deal, with sparkles around the coat. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 12,
+  "headword": "unique",
+  "display": "unique",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "u_____",
+  "pos": "Adjective (adj)",
+  "pos_short": "adj.",
+  "definition": "being the only existing one of its type",
+  "zh": "獨一無二的",
+  "sentence": "I'd recognise your handwriting anywhere — it's unique.",
+  "highlight": [
+   "unique"
+  ],
+  "slug": "unique",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A cosy bedroom desk by a window. An anime girl happily opens an envelope and instantly recognises her best friend's one-of-a-kind handwriting: elegant swirly loops of decorative ink decorated with tiny doodled stars and hearts (abstract flowing strokes, not readable letters), glowing softly. A stack of other plain envelopes sits aside, and her small bird-like companion creature peeks over with a knowing smile. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 13,
+  "headword": "vendor",
+  "display": "vendor",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "v_____",
+  "pos": "Noun (n)",
+  "pos_short": "n.",
+  "definition": "sb who is selling sth",
+  "zh": "攤主",
+  "sentence": "For the past few months she's been working as a street vendor, selling fruit and vegetables.",
+  "highlight": [
+   "vendor"
+  ],
+  "slug": "vendor",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A lively Hong Kong street market in the late afternoon. A cheerful young woman wearing an apron runs a colourful street stall piled with fresh fruit and vegetables (oranges, apples, bok choy, tomatoes, bananas). She hands a bag of oranges to a customer while her helpful round companion creature weighs tomatoes on an old-fashioned hanging scale. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 14,
+  "headword": "haggle",
+  "display": "haggle",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "h_____",
+  "pos": "Verb (v)",
+  "pos_short": "v.",
+  "definition": "to argue with sb in order to get a lower price",
+  "zh": "討價還價",
+  "sentence": "It's traditional that you haggle over the price of things in the market.",
+  "highlight": [
+   "haggle"
+  ],
+  "slug": "haggle",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A busy traditional outdoor market. A customer and a stall-keeper raccoon-like companion creature playfully argue over the price of a decorated ceramic vase: the customer holds up two fingers with a determined face and the stall-keeper holds up four fingers with a cheeky grin, both leaning forward over the counter in a friendly back-and-forth bargaining battle, with other shoppers watching and smiling. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 15,
+  "headword": "stunning",
+  "display": "stunning",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "s_____",
+  "pos": "Adjective (adj)",
+  "pos_short": "adj.",
+  "definition": "extremely beautiful or attractive",
+  "zh": "極漂亮的",
+  "sentence": "When she walked into the room wearing her new dress, everyone thought she looked stunning.",
+  "highlight": [
+   "stunning"
+  ],
+  "slug": "stunning",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: An elegant party room with warm chandeliers. A graceful anime young woman walks through the doorway wearing a beautiful new sparkling evening dress. Everyone in the room, people and small companion creatures, turns towards her with wide amazed eyes and open mouths, some with hearts and sparkles around them, showing they think she looks extremely beautiful. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 16,
+  "headword": "vintage",
+  "display": "vintage",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "v_____",
+  "pos": "Adjective (adj)",
+  "pos_short": "adj.",
+  "definition": "showing the best of a particular type of thing",
+  "zh": "經典的",
+  "sentence": "My mom gave me a vintage comic book from the 1980s.",
+  "highlight": [
+   "vintage"
+  ],
+  "slug": "vintage",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A warm cosy living room with retro 1980s touches (a cassette player, a small arcade toy, warm lamp). A smiling mother hands her excited teenage son a classic, well-kept 1980s comic book in a clear protective sleeve. The cover shows a bold retro superhero creature illustration with no lettering, slightly yellowed pages, and a soft golden glow. His small companion creature gasps in awe. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 17,
+  "headword": "latest",
+  "display": "latest",
+  "is_phrase": false,
+  "question": "What's the word?",
+  "blanks": "l_____",
+  "pos": "Adjective (adj)",
+  "pos_short": "adj.",
+  "definition": "newest or most recent or modern",
+  "zh": "最新的",
+  "sentence": "I just got the latest video game that was released yesterday.",
+  "highlight": [
+   "latest"
+  ],
+  "slug": "latest",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A teenager's bedroom gaming setup with RGB lights. An excited anime teenage boy has just unboxed a brand-new, shiny video game case and a gleaming new console controller, holding the game case high with a huge grin as sparkles and a fresh-out-of-the-box glow surround it. Torn wrapping paper and an opened delivery box lie on the floor, and his small dragon-like companion creature jumps with joy. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 18,
+  "headword": "no matter",
+  "display": "no matter",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "n_____ m_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "regardless of",
+  "zh": "不管",
+  "sentence": "No matter what type of online shop you visit, they're tracking your every click.",
+  "highlight": [
+   "No matter"
+  ],
+  "slug": "no_matter",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A student sits with a laptop surrounded by many floating holographic online shop windows, each a different kind of shop (clothes, shoes, gadgets, snacks, books, shown only as product pictures). In every single window, a tiny cute spy-like companion creature with binoculars watches the mouse cursor, and glowing footprints trail behind each click, showing that whatever shop the student visits, every click is being tracked. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 19,
+  "headword": "be combined with sth",
+  "display": "be combined with",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "b_____ c_____ w_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "to be mixed with sth else",
+  "zh": "加上",
+  "sentence": "This data might be combined with information collected from other sources to create what's known as big data.",
+  "highlight": [
+   "be combined with"
+  ],
+  "slug": "be_combined_with",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A glowing digital landscape. Streams of colourful glowing data particles flow from many different sources (smartphones, laptops, shopping carts, maps, smartwatches) and pour together into one giant swirling sphere of light. Several small companion creatures carry buckets of different coloured data cubes and pour them in, where all the colours mix together into one big bright orb. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 20,
+  "headword": "formulate strategies to do sth",
+  "display": "formulate strategies to",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "f_____ s_____ t_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "to make plans to do sth",
+  "zh": "制定策略",
+  "sentence": "Big data helps companies formulate strategies to attract the most customers and drive sales.",
+  "highlight": [
+   "formulate strategies to"
+  ],
+  "slug": "formulate_strategies_to",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A modern company strategy room. A small business team of anime adults and a wise fox-like strategist companion creature gather around a glowing holographic table showing a 3D map of a shopping district. They move chess-like pieces and draw glowing planned paths that lead crowds of tiny customers towards their shop, carefully making plans to attract customers and increase sales. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 21,
+  "headword": "based on sth",
+  "display": "based on",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "b_____ o_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "using sth as a reason",
+  "zh": "以...為基礎",
+  "sentence": "An online pharmacy might recommend dietary supplements based on searches for specific health issues.",
+  "highlight": [
+   "based on"
+  ],
+  "slug": "based_on",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A cosy bedroom at night. A young person types on a laptop whose screen shows only a magnifying-glass search icon next to simple health icons (a heart and a sore knee). Out of the screen pops a friendly nurse-like pharmacy companion creature offering a tray of vitamin bottles, and glowing lines connect each health icon to the matching vitamin bottle, showing the suggestions come from the searches. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 22,
+  "headword": "have access to sth",
+  "display": "have access to",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "h_____ a_____ t_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "can use or get sth",
+  "zh": "取得",
+  "sentence": "Having access to this knowledge allows businesses to be more responsive to their customers' needs.",
+  "highlight": [
+   "Having access to"
+  ],
+  "slug": "have_access_to",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A small boutique shop. A smiling shop owner turns a large glowing golden key in the door of a magical treasure vault, which opens to reveal floating glowing orbs containing icons of what customers want (heart, shopping bag, gift, star). Thanks to this, she quickly hands a happy customer exactly the right item, while her helper companion creature cheers. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 23,
+  "headword": "give up in frustration",
+  "display": "give up in frustration",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "g_____ u_____ i_____ f_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "to quit because of feeling annoyed",
+  "zh": "沮喪地放棄",
+  "sentence": "I gave up in frustration and posted my experience on social media.",
+  "highlight": [
+   "gave up in frustration"
+  ],
+  "slug": "give_up_in_frustration",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A teenager's study desk. A very annoyed anime teenager throws both hands up and pushes away from a laptop that shows only an endless loading spinner and a red error icon, with comic steam puffing from their head. Their small companion creature also flops over with a grumpy face, and the teenager's phone lies nearby ready to post a complaint, shown with angry-face and thumbs-down icons. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 24,
+  "headword": "be greeted with",
+  "display": "be greeted with",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "b_____ g_____ w_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "to receive sth as a response",
+  "zh": "獲得",
+  "sentence": "I was even greeted with a coupon code for free shipping!",
+  "highlight": [
+   "was",
+   "greeted with"
+  ],
+  "slug": "be_greeted_with",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A bright bedroom. A girl opens an online shopping app on her tablet and a cheerful little delivery-bird companion creature in a cap pops out of the screen, presenting her with a glowing golden coupon ticket that shows only a small delivery-truck icon, surrounded by confetti. The girl gasps with delight at the surprise welcome gift. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 25,
+  "headword": "in my experience",
+  "display": "in my experience",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "i_____ m_____ e_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "from what I have seen or done",
+  "zh": "在我的經驗中",
+  "sentence": "In my experience, big data has made shopping more personalised.",
+  "highlight": [
+   "In my experience"
+  ],
+  "slug": "in_my_experience",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A thoughtful anime young woman sits in a cafe holding her phone, looking up and remembering. Around her float softly glowing memory photo frames of her past shopping moments: each shows products perfectly matched to her taste (her favourite pastel colours, her style of sneakers, her favourite snacks), with a small helpful companion creature presenting them, showing what she has seen from her own life. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 26,
+  "headword": "be made from sth",
+  "display": "be made from",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "b_____ m_____ f_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "to be created using sth",
+  "zh": "由...製成",
+  "sentence": "Everything we sell comes from local sources and many items are made from recycled materials.",
+  "highlight": [
+   "are made from"
+  ],
+  "slug": "be_made_from",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A craft market stall. Beautiful products are clearly created from recycled materials: tote bags woven from plastic bottles, lamps made from tin cans, bowls made from rolled-up old newspaper, and toy robots made from bottle caps. A clever raccoon-like companion creature sits beside a recycling bin, transforming a plastic bottle into a cute bag with sparkles. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 27,
+  "headword": "a variety of sth",
+  "display": "a variety of",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "a v_____ o_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "many different kinds of sth",
+  "zh": "各種各樣",
+  "sentence": "Bargain hunters will find the greatest deals on an amazing variety of unique items.",
+  "highlight": [
+   "variety of"
+  ],
+  "slug": "a_variety_of",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A huge colourful weekend flea market seen from a slightly high angle, packed with many stalls each selling a different kind of unique item: vintage cameras, potted plants, hats, handmade jewellery, ceramics, toys, vinyl records, lanterns and paintings with no text. Excited bargain hunters and their companion creatures explore with wide eyes and shopping bags. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 28,
+  "headword": "special offer",
+  "display": "special offer",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "s_____ o_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "a limited-time deal or discount",
+  "zh": "特別優惠",
+  "sentence": "As a special offer for visitors, you'll get a free reusable shopping bag if you spend $200 or more at the market!",
+  "highlight": [
+   "special offer"
+  ],
+  "slug": "special_offer",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A friendly outdoor market entrance booth decorated with balloons. A smiling vendor companion creature hands a delighted visitor, who is carrying full shopping bags, a free reusable eco shopping bag tied with a ribbon like a gift, with a shining starburst badge and sparkles around it, showing a limited-time gift for visitors. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 29,
+  "headword": "try your hand at sth",
+  "display": "try your hand at",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "t_____ y_____ h_____ a_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "to give sth new a try",
+  "zh": "嘗試一下",
+  "sentence": "If you want to try your hand at making your own accessories, you'll love our workshops that cover all the basics you need to know.",
+  "highlight": [
+   "try your hand at"
+  ],
+  "slug": "try_your_hand_at",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A bright, welcoming handicraft workshop. A teenage student tries something new for the first time: carefully threading colourful beads to make her own bracelet and earrings, tongue slightly out in concentration and eyes shining with excitement. A gentle craftsperson companion creature wearing a tiny apron guides her, with trays of beads, tools and handmade accessories around. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ },
+ {
+  "n": 30,
+  "headword": "enquire about sth",
+  "display": "enquire about",
+  "is_phrase": true,
+  "question": "What's the phrase?",
+  "blanks": "e_____ a_____",
+  "pos": "Phrase",
+  "pos_short": "phr.",
+  "definition": "to ask for information about sth",
+  "zh": "查詢關於",
+  "sentence": "For the latest information or to enquire about taking part, visit our website handcraft.hk or call us on 5552 7164.",
+  "highlight": [
+   "enquire about"
+  ],
+  "slug": "enquire_about",
+  "image_prompt": "Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: A split scene. On the left, a curious anime teenager on a phone call looks at a colourful craft workshop poster (showing only pictures of beads, yarn and scissors, no text), with question-mark bubbles floating around her. On the right, a friendly receptionist companion creature wearing a headset at a craft studio desk happily answers the call and explains, holding a picture brochure. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character."
+ }
+]
