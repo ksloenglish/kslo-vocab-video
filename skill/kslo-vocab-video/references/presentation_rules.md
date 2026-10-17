@@ -44,8 +44,12 @@ Rules:
 - **Every clue blank has the same length** (one solid gold bar, `CLUE_BLANK` in `render.py`), whatever the word's
   length. The first letter is gold. This is different from the main blanks above it, which show one bar per letter.
 - Blank the item **as it appears in the sentence** (the `highlight` spans): "gave up in frustration" →
-  "g\_\_\_\_\_ u\_\_\_\_\_ i\_\_\_\_\_ f\_\_\_\_\_"; "was … greeted with" → "I w\_\_\_\_\_ even g\_\_\_\_\_ w\_\_\_\_\_"
-  (highlight `["was", "greeted with"]`). A capital stays capital ("N\_\_\_\_\_ m\_\_\_\_\_ what type…").
+  "g\_\_\_\_\_ u\_\_\_\_\_ i\_\_\_\_\_ f\_\_\_\_\_"; "be greeted with" → "I was even g\_\_\_\_\_ w\_\_\_\_\_". A capital stays capital ("N\_\_\_\_\_ m\_\_\_\_\_ what type…").
+- **Phrases starting with "be": show the form of "be" in full, never blank it** (user, 2026-10-17). The form can be
+  be, is, am, are, was, were, been or being. Examples: "I was even g\_\_\_\_\_ w\_\_\_\_\_ a coupon code…", "This data might be
+  c\_\_\_\_\_ w\_\_\_\_\_ information…", "many items are m\_\_\_\_\_ f\_\_\_\_\_ recycled materials". Keep the be-form inside the `highlight`
+  (`["was", "greeted with"]`, `["be combined with"]`), so the revealed sentence still highlights it; `clue_sentence()`
+  leaves it unblanked automatically. The letter blanks above the sentence stay "b_ g_ w_" (P3).
 - Whole words only: "features" → "f\_\_\_\_\_", never "f\_\_\_\_\_s". One-letter words stay as they are ("a").
 - At the reveal, the clue fades out and the full sentence with the gold highlight fades in at the same place.
 - An item with an empty `highlight` has no blank in its clue. `review_list.py` lists these under "To fix", and they must

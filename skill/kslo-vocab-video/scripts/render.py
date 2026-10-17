@@ -103,11 +103,26 @@ def blank_words(text):
     return ' '.join(w if len(w) == 1 else w[0] + CLUE_BLANK for w in text.split())
 
 
-def clue_sentence(sent, highlights):
+BE_FORMS = {'be', 'is', 'am', 'are', 'was', 'were', 'been', 'being'}
+
+
+def clue_sentence(sent, highlights, display=''):
     """Blank the item in the sample sentence (as it appears there, e.g. 'Having access to'), keep first letters.
+    Phrases starting with 'be' (rule P8): the form of 'be' in the sentence is shown in full, not blanked
+    ('I was even g_____ w_____', 'might be c_____ w_____', 'are m_____ f_____').
     Returns (clue text, list of blanked spans to highlight)."""
     out, spans = sent, []
-    for hl in highlights:
+    hls = list(highlights)
+    if display.lower().split()[:1] == ['be']:
+        trimmed = []
+        for hl in hls:
+            ws = hl.split()
+            while ws and ws[0].lower() in BE_FORMS:
+                ws = ws[1:]
+            if ws:
+                trimmed.append(' '.join(ws))
+        hls = trimmed
+    for hl in hls:
         i = out.find(hl)
         if i < 0:
             i = out.lower().find(hl.lower())
@@ -381,7 +396,7 @@ class Assets:
         c['blanks'] = self._blank_img(it['display'], font('bold', size))
         c['answer'] = Txt(it['display'], font('bold', size), WHITE)
         c['sentence'] = self._rich(it['sentence'], it['highlight'], 30, SENT_W)
-        cs, chl = clue_sentence(it['sentence'], it['highlight'])
+        cs, chl = clue_sentence(it['sentence'], it['highlight'], it['display'])
         c['clue'] = self._rich(cs, chl, 30, SENT_W, clue=True)
         c['card'] = self._meaning(it)
         self._item_cache[n] = c

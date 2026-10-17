@@ -23,7 +23,7 @@ items = load_items()
 rows, warn = [], []
 for it in items:
     kind = 'phrase' if len(it['display'].split()) > 1 else 'word'
-    clue, spans = clue_sentence(it['sentence'], it['highlight'])
+    clue, spans = clue_sentence(it['sentence'], it['highlight'], it['display'])
     if not spans:
         warn.append(f"#{it['n']} {it['display']}: no highlight found in the sentence, so the clue has no blank. Fix items.json 'highlight'.")
     esc = lambda x: x.replace('_', '\\_')          # keep underscores literal in Markdown
