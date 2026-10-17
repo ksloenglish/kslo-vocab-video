@@ -33,9 +33,16 @@ the same place.
 
 ## Illustration prompt template (`generate_image`, aspect 16:9, 5 per call)
 
-> Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: {a concrete scene showing the meaning AS USED IN THE SAMPLE SENTENCE: who, doing what, where, with which visible cue}. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Any creatures are cute ORIGINAL fantasy pocket-monster-style companions in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character.
+> Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: {a concrete scene showing the meaning AS USED IN THE SAMPLE SENTENCE: who, doing what, where, with which visible cue. ALWAYS name at least one cute original companion creature here, with its look and type, e.g. "her small round fluffy yellow-and-blue electric-type companion creature", and give it a part in the action}. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Every scene includes at least one cute ORIGINAL fantasy pocket-monster-style companion creature, clearly visible and part of the action, in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character.
 
-Store each prompt in `items.json` `image_prompt`. Save the images as `illus/NN_slug.png`. Abstract items need a visible cue
+**Every illustration must have the Pokémon-like look: anime characters together with at least one original
+pocket-monster-style companion creature** (user requirement; the Unit 1 look). The style line alone is not enough. Unless
+the Scene names a creature, the model draws plain anime people. Unit 1 creatures, for variety: a round fluffy
+yellow-and-blue electric-type companion, a clever owl-like creature, a sleepy cat-like creature, an otter-like shopkeeper
+creature, leaf-sprout creatures, a fox-like creature in a cape. Vary species, colours and elemental types across items,
+and never reuse a real franchise design.
+Store each prompt in `items.json` `image_prompt`. Run `python3 $S/check_prompts.py` before generating; it fails any
+prompt without a creature, the no-text preamble or the style line, or with a franchise name. Save the images as `illus/NN_slug.png`. Abstract items need a visible cue
 taken from the sentence:
 - "irrelevant" ("Many people consider politics irrelevant to their lives"): a teenager enjoys their hobbies and shrugs, turning away from a TV political debate.
 - "no matter" ("No matter what type of online shop you visit, they're tracking your every click"): floating shop windows of every kind, each with a tiny spy creature watching the cursor.

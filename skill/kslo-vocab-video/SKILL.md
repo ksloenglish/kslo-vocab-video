@@ -21,6 +21,7 @@ gesture-speech sync, branding, mockups, format v2). They are acceptance criteria
 | `references/presentation_rules.md` | building `items.json`, answering ASK cases, illustrations |
 | `references/voice_and_audio.md` | recording item takes, falling tone, loudness |
 | `references/missk_clips.md` | what the library holds; regenerating a library clip (only if asked or failing QA) |
+| `references/youtube.md` | YouTube title and description format (consistent with Unit 1) |
 | `references/visual_spec.md` | layout and timing, illustration prompt, mockups for visual changes |
 
 ## Setup
@@ -59,8 +60,11 @@ Unit 1 reference build (`reference/unit1/`; the final MP4 is a release asset).
    - Ask the user every `ASK` case it prints, with concrete options (`ask`; deferred is fine while you start the illustrations).
    - Fix every `CHECK highlights` line in `items.json`.
 2. **Illustrations.** For each item, write `image_prompt` from the definition and the sample sentence, using the template in `visual_spec.md`.
+   - **Every image needs the Pokémon-like look:** anime characters plus at least one cute original pocket-monster-style
+     companion creature, named in the Scene and taking part in the action. Never copy a franchise character.
+   - Run `python3 $S/check_prompts.py` and fix every failure before generating.
    - Generate 5 per `generate_image` call (16:9) into `illus/NN_slug.png`.
-   - Review a contact sheet. Regenerate any image with text, a franchise lookalike, or the wrong meaning.
+   - Review a contact sheet. Regenerate any image with text, a franchise lookalike, no creature, or the wrong meaning.
 3. **Approval before audio (W5).** Fix every highlight first. Then run `python3 $S/review_list.py` and show the user
    `output/review_list.md` in a blocking `ask`: what Miss K will say, the TTS text, the blanks and the clue sentence for
    every item. **Do not generate any item audio until the user approves.** Apply their corrections to `items.json` and
@@ -86,7 +90,7 @@ Unit 1 reference build (`reference/unit1/`; the final MP4 is a release asset).
 9. **Final QA:**
    - Transcribe the full video and check the order: intro, phrases, pop-up lines, transition, words, outro.
    - Check frames: opening lockup, a pop-up, an item before and after the reveal, the meaning card, and the outro fade to black.
-10. **YouTube.** `python3 $S/youtube_text.py` writes `output/youtube.md` (title and description with chapters, phrases listed first). It never mentions AI, Manus or "generated".
+10. **YouTube.** Run `python3 $S/youtube_text.py`, which writes `output/youtube.md`. Then check it against `references/youtube.md`: the title pattern `<title> | Vocabulary Revision with Miss K | K S Lo English`, the description blocks in the Unit 1 order, chapters, phrases listed before words with full headwords, and no mention of AI, Manus or "generated".
 11. **Deliver** the MP4 and `output/youtube.md`. Record decisions in a `NOTES.md` in the project.
 
 ## Revisions: what to re-run
@@ -118,7 +122,8 @@ Keep the previous MP4 as `_vN` and name new outputs `_v(N+1)`.
 | `make_refs.py`, `retime_clip.py` | library maintenance only: Seedance audio refs; warp a clip so its lips follow the clean voice |
 | `check_pitch.py`, `check_loudness.py`, `contact_sheet.py` | QA: falling tone, loudness, gestures |
 | `build_audio.py`, `finalize.sh` | mix (voice, SFX, ducked music, loudnorm) and render + concat + mux |
-| `youtube_text.py` | YouTube title and description |
+| `youtube_text.py` | YouTube title and description (format in `references/youtube.md`) |
+| `check_prompts.py` | checks every illustration prompt has a creature, the no-text preamble and the style line |
 
 Templates: `brand/logo_white.png` (transparent; never add a backing), `missk/missk_neutral.webp` (neutral keyframe;
 the badge and any new clip use it), `audio/` (music and SFX), `fonts/`, and `examples/unit1_items.json` (all 30 Unit 1

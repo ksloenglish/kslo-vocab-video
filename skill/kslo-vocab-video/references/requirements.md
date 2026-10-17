@@ -33,7 +33,7 @@ every new unit. The tag in brackets is where it came from. Where format v2 chang
 | # | Requirement |
 |---|---|
 | S1 | Show an illustration of the item's meaning **as used in the sample sentence**. Study the definition and sentence first. [brief] |
-| S2 | Illustration style: vibrant anime, or cute **original** pocket-monster-like creatures. **Never copy Pokémon or any franchise character.** No text in images. [brief] |
+| S2 | Illustration style: vibrant anime characters **together with at least one cute original pocket-monster-like companion creature in every image** (the Pokémon-like look of Unit 1). The creature is named in the prompt's Scene and takes part in the action (`check_prompts.py`). **Never copy Pokémon or any franchise character.** No text in images. [brief; made mandatory 2026-10-18 after a unit came out with no creatures] |
 | S3 | Below the image: **"What's the word?"** or **"What's the phrase?"**, then the first letter(s) with blanks. [brief] |
 | S3b | Under the blanks, during the thinking time: the **sample sentence with the item blanked out**, first letter(s) given, **every blank the same length**; for phrases starting with "be", the form of "be" in the sentence is shown in full ("I was even g_____ w_____ …") (see P8 in `presentation_rules.md`). [2026-10-17] |
 | S4 | A 3-second think time with a **film-leader countdown** (3-2-1) and sound effects (beeps and projector). Since [F], Miss K is **not animated on quiz screens**: a round **Miss K badge** (face crop of the neutral keyframe, gold ring, "Say it out loud!") sits under the countdown, and while she says the answer it shows gold ripple rings and voice bars. (V1-V5: a keyed Miss K clip at the bottom right.) [brief, F] |

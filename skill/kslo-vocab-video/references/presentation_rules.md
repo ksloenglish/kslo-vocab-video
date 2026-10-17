@@ -30,8 +30,9 @@ answer in `items.json` `display` (and in `project.json` notes if it is a general
 
 Read the definition **and the sample sentence**, and depict that meaning in that context. For example, "feature" in
 "The market features local crafts" shows a market showcasing crafts, not a facial feature. Style: see the prompt
-template in `visual_spec.md`. Generate in batches of 5 with `generate_image` (16:9) and review a contact sheet.
-Regenerate any image that shows text or letters, a franchise lookalike, or the wrong meaning.
+template in `visual_spec.md`. **Every image has anime characters plus at least one original pocket-monster-style
+companion creature** (S2), so name the creature in each Scene. Generate in batches of 5 with `generate_image` (16:9) and review a contact sheet.
+Regenerate any image that shows text or letters, a franchise lookalike, no companion creature, or the wrong meaning.
 
 ## Clue sentence on the thinking screen (P8, added 2026-10-17)
 
