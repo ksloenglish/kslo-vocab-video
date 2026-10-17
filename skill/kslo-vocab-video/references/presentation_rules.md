@@ -32,3 +32,21 @@ Read the definition **and the sample sentence**, and depict that meaning in that
 "The market features local crafts" shows a market showcasing crafts, not a facial feature. Style: see the prompt
 template in `visual_spec.md`. Generate in batches of 5 with `generate_image` (16:9) and review a contact sheet.
 Regenerate any image that shows text or letters, a franchise lookalike, or the wrong meaning.
+
+## Clue sentence on the thinking screen (P8, added 2026-10-17)
+
+During the countdown, the question panel shows the sample sentence under the blanks, with the item blanked out and only
+the first letter of each word given:
+- "sustainable": *A large international meeting was held with the aim of promoting s\_\_\_\_\_ development in all countries.*
+- "formulate strategies to": *Big data helps companies f\_\_\_\_\_ s\_\_\_\_\_ t\_\_\_\_\_ attract the most customers and drive sales.*
+
+Rules:
+- **Every clue blank has the same length** (one solid gold bar, `CLUE_BLANK` in `render.py`), whatever the word's
+  length. The first letter is gold. This is different from the main blanks above it, which show one bar per letter.
+- Blank the item **as it appears in the sentence** (the `highlight` spans): "gave up in frustration" →
+  "g\_\_\_\_\_ u\_\_\_\_\_ i\_\_\_\_\_ f\_\_\_\_\_"; "was … greeted with" → "I w\_\_\_\_\_ even g\_\_\_\_\_ w\_\_\_\_\_"
+  (highlight `["was", "greeted with"]`). A capital stays capital ("N\_\_\_\_\_ m\_\_\_\_\_ what type…").
+- Whole words only: "features" → "f\_\_\_\_\_", never "f\_\_\_\_\_s". One-letter words stay as they are ("a").
+- At the reveal, the clue fades out and the full sentence with the gold highlight fades in at the same place.
+- An item with an empty `highlight` has no blank in its clue. `review_list.py` lists these under "To fix", and they must
+  be fixed before approval.

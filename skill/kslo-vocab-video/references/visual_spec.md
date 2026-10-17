@@ -21,6 +21,9 @@ at x 70-1170, y 115-734. The question/answer panel is at x 70-1850, y 752-1052 (
 (x 1210-1870, y 115-415) shows the countdown first, then the meaning card. The **Miss K badge** (172 px disc, gold ring, centre
 x 1540, y 548) sits under it with "Miss K" and "Say it out loud!"; from the reveal until her voice ends (`work/item_voice.json`)
 the caption becomes gold voice bars and three gold ripple rings expand from the disc. No keyed Miss K on item screens.
+During the countdown, the clue sentence (P8) sits at y = panel + 190, under the blanks (Poppins 30, width `SENT_W` 1700,
+max 2 lines; it fades in 0.45-0.9 s and out at the reveal). The revealed sentence with its highlight then fades in at
+the same place.
 
 ## Brand rules
 

@@ -94,6 +94,34 @@ def paste_scaled(dst, src, cx, cy, s, op=1.0):
     paste(dst, im, cx - im.size[0] / 2, cy - im.size[1] / 2, op)
 
 
+SENT_W = 1700                 # sentence width in the full-width question panel
+CLUE_BLANK = '_____'          # every blank in the clue sentence has the same length (user rule P8)
+
+
+def blank_words(text):
+    """'formulate strategies to' -> 'f_____ s_____ t_____'; one-letter words ('a') stay as they are."""
+    return ' '.join(w if len(w) == 1 else w[0] + CLUE_BLANK for w in text.split())
+
+
+def clue_sentence(sent, highlights):
+    """Blank the item in the sample sentence (as it appears there, e.g. 'Having access to'), keep first letters.
+    Returns (clue text, list of blanked spans to highlight)."""
+    out, spans = sent, []
+    for hl in highlights:
+        i = out.find(hl)
+        if i < 0:
+            i = out.lower().find(hl.lower())
+        if i < 0:
+            continue
+        j = i + len(hl)
+        while j < len(out) and out[j].isalpha():      # blank the whole word ('features' -> 'f_____')
+            j += 1
+        b = blank_words(out[i:j])
+        out = out[:i] + b + out[j:]
+        spans.append(b)
+    return out, spans
+
+
 class Txt:
     """Text sprite; (x, top) refers to the font's ascent top; pad offset handled."""
     PAD = 6
@@ -352,7 +380,9 @@ class Assets:
         c['size'] = size
         c['blanks'] = self._blank_img(it['display'], font('bold', size))
         c['answer'] = Txt(it['display'], font('bold', size), WHITE)
-        c['sentence'] = self._rich(it['sentence'], it['highlight'], 30, 1290)
+        c['sentence'] = self._rich(it['sentence'], it['highlight'], 30, SENT_W)
+        cs, chl = clue_sentence(it['sentence'], it['highlight'])
+        c['clue'] = self._rich(cs, chl, 30, SENT_W, clue=True)
         c['card'] = self._meaning(it)
         self._item_cache[n] = c
         return c
@@ -394,7 +424,13 @@ class Assets:
         bb = im.getbbox(); o.ink_top = bb[1] - P; o.ink_bot = bb[3] - P
         return o
 
-    def _rich(self, sent, highlights, size, maxw):
+    def _rich(self, sent, highlights, size, maxw, clue=False):
+        """Sentence with highlighted spans. clue=True: spans contain CLUE_BLANK markers, drawn as first letter +
+        one solid gold bar of fixed width (all blanks the same length), without the highlight pill."""
+        bw = round(size * 2.4)
+
+        def seg_w(f, s):
+            return f.getlength(s.replace(CLUE_BLANK, '')) + s.count(CLUE_BLANK) * bw
         mask = [False] * len(sent)
         for hl in highlights:
             i = sent.find(hl)
@@ -419,7 +455,7 @@ class Assets:
         sp = fn.getlength(' ')
         lines, lw = [[]], 0
         for wd in words:
-            ww = sum((fh if hl else fn).getlength(s) for s, hl in wd)
+            ww = sum(seg_w(fh if hl else fn, s) for s, hl in wd)
             if lines[-1] and lw + sp + ww > maxw:
                 lines.append([]); lw = 0
             if lines[-1]:
@@ -434,10 +470,17 @@ class Assets:
                 xx = 6 + x
                 for s, hl in wd:
                     f = fh if hl else fn
-                    if hl:
+                    col = (GOLD + (255,)) if hl else (236, 241, 250, 255)
+                    if hl and not clue:
                         d.rounded_rectangle((xx - 3, y - asc * 0.78, xx + f.getlength(s) + 3, y + desc * 0.55), 6, fill=(255, 200, 66, 46))
-                    d.text((xx, y), s, font=f, fill=(GOLD + (255,)) if hl else (236, 241, 250, 255), anchor='ls')
-                    xx += f.getlength(s)
+                    for k, part in enumerate(s.split(CLUE_BLANK)):
+                        if k:
+                            th = max(3, round(size * 0.1))
+                            d.rounded_rectangle((xx + 3, y + 2, xx + bw - 3, y + 2 + th), th // 2, fill=col)
+                            xx += bw
+                        if part:
+                            d.text((xx, y), part, font=f, fill=col, anchor='ls')
+                            xx += f.getlength(part)
         return im
 
     def _meaning(self, it):
@@ -942,6 +985,11 @@ def render_item(seg, t, g, fidx):
             paste(fr, rounded((max(2, uw), 7), 3, GOLD + (255,)), qx + 34, base_top + ans.asc + 10, ex)
         sp = eo(prog(t, INFO_AT, INFO_AT + 0.45))
         paste(fr, c['sentence'], qx + 28, qy + 190 + 12 * (1 - sp), sp * ex)
+    # clue: the sample sentence with the item blanked (first letters given), during the thinking time
+    cl_in = eo(prog(t, 0.45, 0.9))
+    cl_out = prog(t, CD_END, CD_END + 0.25)
+    if cl_out < 1:
+        paste(fr, c['clue'], qx + 28, qy + 190 + 12 * (1 - cl_in), cl_in * (1 - cl_out) * ex)
     # right panel: countdown -> meaning card
     rx, ry = A.rp_xy
     if t < CD_END + 0.05:

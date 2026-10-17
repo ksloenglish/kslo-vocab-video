@@ -35,6 +35,7 @@ every new unit. The tag in brackets is where it came from. Where format v2 chang
 | S1 | Show an illustration of the item's meaning **as used in the sample sentence**. Study the definition and sentence first. [brief] |
 | S2 | Illustration style: vibrant anime, or cute **original** pocket-monster-like creatures. **Never copy Pokémon or any franchise character.** No text in images. [brief] |
 | S3 | Below the image: **"What's the word?"** or **"What's the phrase?"**, then the first letter(s) with blanks. [brief] |
+| S3b | Under the blanks, during the thinking time: the **sample sentence with the item blanked out**, first letter(s) given, **every blank the same length** (see P8 in `presentation_rules.md`). [2026-10-17] |
 | S4 | A 3-second think time with a **film-leader countdown** (3-2-1) and sound effects (beeps and projector). Since [F], Miss K is **not animated on quiz screens**: a round **Miss K badge** (face crop of the neutral keyframe, gold ring, "Say it out loud!") sits under the countdown, and while she says the answer it shows gold ripple rings and voice bars. (V1-V5: a keyed Miss K clip at the bottom right.) [brief, F] |
 | S5 | When time is up, Miss K **says the item** (the shortened display form, see P3), and the answer is revealed. [brief, first reply] |
 
@@ -67,6 +68,7 @@ every new unit. The tag in brackets is where it came from. Where format v2 chang
 | W1 | **Visual changes: show mockup stills first and wait for approval before the full render.** Audio changes: implement directly, because the user checks audio in the video. [V2 feedback, 23:16] |
 | W2 | Ask the user when something is unclear. Suggest improvements, but do not block on them. [brief] |
 | W3 | Deliver a **YouTube title and description** with the video. **Never mention AI, Manus, or "generated".** [after V5] |
+| W5 | **Before generating any item audio, show the user the full list of what Miss K will say** (`review_list.py`: display form, TTS text, blanks, clue sentence) with a blocking `ask`, and wait for approval. Apply corrections, regenerate the list and confirm again if anything changed. [2026-10-17] |
 | W4 | Video model: `seedance-2-5` (4-30 s, 720p) unless the user names another model. [brief] |
 
 ## Format v2: lower production cost (agreed 2026-10-17)

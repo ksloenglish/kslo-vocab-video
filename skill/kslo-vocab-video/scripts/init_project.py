@@ -75,7 +75,10 @@ def guess_highlight(display, sentence):
     """Return (substring_of_sentence or None, exact?)"""
     i = sentence.lower().find(display.lower())
     if i >= 0:
-        return sentence[i:i + len(display)], True
+        j = i + len(display)
+        while j < len(sentence) and sentence[j].isalpha():   # 'feature' in 'features' -> whole word
+            j += 1
+        return sentence[i:j], j == i + len(display)
     words = [w for w in display.split() if w.lower() != 'a']
     rx = r'\b' + r'\s+'.join(word_rx(w) for w in words) + r'\b'
     m = re.search(rx, sentence, flags=re.I)

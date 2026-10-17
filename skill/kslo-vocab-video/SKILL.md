@@ -47,29 +47,33 @@ Unit 1 reference build (`reference/unit1/`; the final MP4 is a release asset).
 2. **Illustrations.** For each item, write `image_prompt` from the definition and the sample sentence, using the template in `visual_spec.md`.
    - Generate 5 per `generate_image` call (16:9) into `illus/NN_slug.png`.
    - Review a contact sheet. Regenerate any image with text, a franchise lookalike, or the wrong meaning.
-3. **Item voice takes** (`voice_and_audio.md`):
+3. **Approval before audio (W5).** Fix every highlight first. Then run `python3 $S/review_list.py` and show the user
+   `output/review_list.md` in a blocking `ask`: what Miss K will say, the TTS text, the blanks and the clue sentence for
+   every item. **Do not generate any item audio until the user approves.** Apply their corrections to `items.json` and
+   re-run the list.
+4. **Item voice takes** (`voice_and_audio.md`):
    - Make one `generate_speech` call per item, saved to `audio/items_raw/NN.wav`.
    - Run `check_pitch.py` on every take. Re-record rising takes with carrier sentences, then `extract_take.py`.
    - Listen-check for creaky, swallowed or unclear words.
    - Record the picks in `project.json` `item_takes`.
    - Then run `python3 $S/prep_items.py` and `python3 $S/check_loudness.py`.
-4. **Key the library clips.** Run `python3 $S/prep_clips.py` (about 1 minute). Framing comes from the shipped `stab.json`.
-5. **Check the timeline.** `python3 $S/timeline.py` prints the segments, the part order and the pop-up slots. It warns about any item without a prepared voice.
-6. **Preview stills.** Run `python3 $S/render.py test <times>` (see `visual_spec.md`) and inspect:
+5. **Key the library clips.** Run `python3 $S/prep_clips.py` (about 1 minute). Framing comes from the shipped `stab.json`.
+6. **Check the timeline.** `python3 $S/timeline.py` prints the segments, the part order and the pop-up slots. It warns about any item without a prepared voice.
+7. **Preview stills.** Run `python3 $S/render.py test <times>` (see `visual_spec.md`) and inspect:
    - the opening
    - the Part 1 card
-   - a phrase item before and after the reveal (the badge speaking)
+   - a phrase item during the countdown (blanks and clue sentence) and after the reveal (the badge speaking)
    - a pop-up
    - the transition
    - a word item
    - the outro wave
    For a new unit with the unchanged design, check them yourself. **For any visual change, show the user mockups and wait for approval (W1).**
-7. **Render.** Run `bash $S/finalize.sh 6` in the background (about 15 min), then `job wait`. It renders the segments, mixes the audio (`build_audio.py`) and muxes to `project.json` `output`.
-8. **Final QA:**
+8. **Render.** Run `bash $S/finalize.sh 6` in the background (about 15 min), then `job wait`. It renders the segments, mixes the audio (`build_audio.py`) and muxes to `project.json` `output`.
+9. **Final QA:**
    - Transcribe the full video and check the order: intro, phrases, pop-up lines, transition, words, outro.
    - Check frames: opening lockup, a pop-up, an item before and after the reveal, the meaning card, and the outro fade to black.
-9. **YouTube.** `python3 $S/youtube_text.py` writes `output/youtube.md` (title and description with chapters, phrases listed first). It never mentions AI, Manus or "generated".
-10. **Deliver** the MP4 and `output/youtube.md`. Record decisions in a `NOTES.md` in the project.
+10. **YouTube.** `python3 $S/youtube_text.py` writes `output/youtube.md` (title and description with chapters, phrases listed first). It never mentions AI, Manus or "generated".
+11. **Deliver** the MP4 and `output/youtube.md`. Record decisions in a `NOTES.md` in the project.
 
 ## Revisions: what to re-run
 
@@ -93,6 +97,7 @@ Keep the previous MP4 as `_vN` and name new outputs `_v(N+1)`.
 | `init_project.py` | DOCX/CSV → `items.json`, `project.json` (phrases first); copies templates and library; ASK and CHECK lists |
 | `timeline.py` | segments, parts, pop-up slots, Miss K clip schedule (shared by the renderer and the mixer) |
 | `render.py` | `test <t...>` stills, `pool <workers> <idx,...>` segments, `all <workers>` |
+| `review_list.py` | the approval list (what Miss K says, the blanks, the clue sentences) before any item audio |
 | `prep_items.py` | trim the chosen item takes → `audio/items/`, `work/item_voice.json` |
 | `extract_take.py` | cut an item out of a carrier-sentence take, with an ASR check |
 | `prep_clips.py`, `keying.py` | chroma key and stabilisation of the library clips → `clips/keyed/*.npy` |
