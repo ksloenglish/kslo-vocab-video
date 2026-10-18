@@ -4,14 +4,31 @@ This repo holds the shared assets for the **"S2 Unit N Useful Words and Phrases"
 skill `kslo-vocab-video`, featuring the anime tutor **Miss K**. Clone it in any Manus account to build a new unit with the
 same character, voice, branding and reusable clips.
 
+**Public from 19 October 2026.** Colleagues can browse, download the ZIP or clone without a GitHub
+account or owner-specific permission. The updated skill includes the required design guidance, so the
+separate teacher-created card skill/private card repositories are not prerequisites.
+
 ## Quick start (new unit, in Manus)
 
 1. Add the skill from `skill/kslo-vocab-video/` if the account doesn't have it yet. Zip that folder, or upload it as a skill.
-2. Enable the GitHub integration for an account that can read `ksloenglish/kslo-vocab-video`.
+2. Download/clone the public assets; GitHub integration is optional for reading them. Install the **whole
+   skill directory**, not only its SKILL.md, so all scripts/references/templates are present. A shared
+   Manus skill attachment can be added directly to **My Skills** for future tasks.
 3. Ask Manus: *"Use the kslo-vocab-video skill to make the S2 Unit 2 video from the vocab DOCX in the ksloenglish GitHub repo."*
    The skill runs `scripts/fetch_assets.sh`, which clones this repo to `~/kslo-vocab-video`, and then follows its workflow.
 
 A normal unit needs **no video generation**. Only illustrations and the item voice takes are new.
+
+The teacher first approves three style pilots and the complete speaking list. After all illustrations
+are generated and checked, the skill shows **every image in a readable gallery with full-resolution
+links** and waits for explicit full-set approval **before video assembly**. Rejected images are corrected
+and re-presented; approved images are protected by hashes. A pilot approval does not approve unseen art.
+
+Recent Unit 3 safeguards cover coherent beaks/mouths, complete limbs, clothing at the waterline,
+distinct exercise scenes, second-syllable concern stress and audible final /t/ in boost. See
+`skill/kslo-vocab-video/references/unit3_corrections.md` for the correction/verification record and
+`references/sharing_and_access.md` inside that skill for access/install guidance. Public availability
+does not assign a new blanket copyright licence to assets; retain existing rights and notices.
 
 ## Contents
 
@@ -53,5 +70,6 @@ The video runs in this order:
 
 Each item shows an illustration, then "What's the phrase?" with first-letter blanks and a 3-2-1 film-leader
 countdown. The answer is then revealed with the Miss K badge speaking, plus a meaning card (POS, Chinese, definition,
-highlighted sample sentence). An encouragement pop-up of Miss K appears after every 5 items. The full rules are in
+highlighted sample sentence). A Miss K encouragement follows every fifth item **only when at least three
+items remain in that same part**. The full rules are in
 `skill/kslo-vocab-video/references/requirements.md`.

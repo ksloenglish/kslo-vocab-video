@@ -2,8 +2,8 @@
 Layout (format v2): opening (generic intro clip) -> Part 1 card -> Part 1 items -> transition (Part 2) -> Part 2 items
 -> conclusion (generic outro clip) -> outro (logo + fade to black).
 Part 1 = PHRASES, Part 2 = WORDS (user rule). A unit with only one type has one part and no transition.
-Encouragement pop-ups (Miss K slides in, ~4-5 s) follow every 5th item WITHIN a part, except after the last item of a
-part. There are no per-item Miss K clips: during the quiz Miss K is a small badge and her answer is voice only.
+Encouragement pop-ups (Miss K slides in, ~4-5 s) follow every 5th item WITHIN a part only when at least three
+items remain in that same part. There are no per-item Miss K clips: the quiz uses a small badge and voice only.
 Clip durations come from work/clip_speech.json (copied from the GitHub library by init_project.py).
 """
 import json, os, sys
@@ -53,6 +53,7 @@ CONC_DUR = TRANS_GROW + CONC_CLIP + 1.0
 OUTRO_DUR = 8.0         # ~3 s logo hold, 2 s eased fade to black, 1 s black hold (user request)
 VO_LEAD = 0.5
 POP_EVERY = 5
+POP_MIN_REMAINING = 3  # never isolate the final one or two items before a section transition
 POP_TAIL = 0.3          # segment = clip + tail; Miss K slides in during the clip's 0.5 s lead, out at the end
 POP_LINES = {           # generic encouragement lines (audio + clip in the library)
     'pop1': 'Great job! Keep going!',
@@ -64,13 +65,17 @@ POP_LINES = {           # generic encouragement lines (audio + clip in the libra
 }
 
 
+def popup_positions(count):
+    """One-based within-part positions with at least three following items."""
+    return [done for done in range(POP_EVERY, count + 1, POP_EVERY)
+            if count - done >= POP_MIN_REMAINING]
+
+
 def popup_slots():
-    """item numbers after which a pop-up appears"""
+    """Global item numbers after which a pop-up is permitted within its part."""
     out = []
     for k, its in PARTS:
-        for j, it in enumerate(its):
-            if (j + 1) % POP_EVERY == 0 and j + 1 < len(its):
-                out.append(it['n'])
+        out.extend(its[done - 1]['n'] for done in popup_positions(len(its)))
     return out
 
 

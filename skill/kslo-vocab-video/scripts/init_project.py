@@ -172,7 +172,9 @@ def main():
                           question="What's the phrase?" if is_phrase else "What's the word?",
                           blanks=blanks_text(disp), pos=r['pos'], pos_short=ps or '?', definition=r['definition'],
                           zh=r['zh'], sentence=r['sentence'], highlight=[hl] if hl else [],
-                          slug=re.sub(r'[^a-z]+', '_', disp.lower()).strip('_'), image_prompt='', ask=ak))
+                          slug=re.sub(r'[^a-z]+', '_', disp.lower()).strip('_'), image_prompt='',
+                          creature_family='', creature_signature='', creature_role='',
+                          human_creature_interaction='', creature_scale_plan='', style_reference_files=[], ask=ak))
     kinds = ''.join('P' if it['is_phrase'] else 'W' for it in items)
     nw = kinds.count('W')
     title = (a.title or f'{a.level} Unit {a.unit} Useful Words and Phrases').strip()
@@ -191,6 +193,8 @@ def main():
                 conclusion_l2=f'and phrases from Unit {a.unit}.',
                 output='output/' + re.sub(r'[^A-Za-z0-9]+', '_', title).strip('_') + '.mp4',
                 item_gain_extra_db={}, nostretch=[], item_takes={},
+                illustration_policy='unit1_costars_v1',
+                illustration_style='Unit 1-style anime; clear human participant and different prominent adorable ORIGINAL pocket-monster-style meaning-bearing co-star in every image; not a tiny decorative pet; no franchise characters or card UI.',
                 n_words=nw, n_phrases=len(items) - nw)
     for fn, obj in (('items.json', items), ('project.json', proj)):
         f = os.path.join(P, fn)
@@ -199,6 +203,7 @@ def main():
         else:
             json.dump(obj, open(f, 'w'), ensure_ascii=False, indent=1)
     print(f'project: {P}\n{len(items)} items: {nw} words, {len(items) - nw} phrases  order={kinds}\n')
+    print('ILLUSTRATIONS: read /pokemon-vocab-cards Section 3 and references/illustration_style.md; inspect Unit 1 anchors, plan prominent meaning-bearing human-creature co-stars and approve three pilots before bulk generation. Fill creature family/signature/role/interaction/scale/references; inspect actual images AND final-size cards before check_illustrations.py.')
     for it in items:
         print(f'{it["n"]:2d} {it["headword"]:34s} -> {it["display"]:28s} | {it["blanks"]:44s} | {it["pos_short"]:4s} | {it["question"]}')
     if checks:

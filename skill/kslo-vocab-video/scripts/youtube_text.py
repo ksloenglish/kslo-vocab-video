@@ -4,8 +4,8 @@
 Rules (user): never mention AI, Manus, "generated" or how the video was made; address K S Lo students;
 keep the K S Lo English branding. YouTube chapters must start at 0:00, be >= 3 and each >= 10 s, so items
 (8.6 s) are listed WITHOUT timestamps - only Welcome / Part 1 / Part 2 / Wrap-up are chapters.
-Format and wording: see references/youtube.md (kept consistent with the delivered Unit 1 text).
-Review the text, then paste it into YouTube Studio.
+Use the approved Unit 1 wording (see references/youtube_copy.md); generate for every completed unit.
+Review and deliver output/youtube.md with the MP4. This script never uploads or publishes metadata.
 
 usage: python3 youtube_text.py
 """
@@ -21,14 +21,7 @@ def ts(t):
 
 
 lvl, unit = proj('level', 'S2'), proj('unit', '')
-import re
-vt = proj('title')
-title = f'{vt} | Vocabulary Revision with Miss K | K S Lo English'
-if len(title) > 100:                                   # YouTube limit: drop the middle part first
-    title = f'{vt} | K S Lo English'
-# what the opening line revises: "S2 Unit 1" for standard titles, otherwise the teacher's title
-m = re.match(r'^(.*?)\s+useful words and phrases$', vt, flags=re.I)
-topic = m.group(1) if m else vt
+title = f'{proj("title")} | Vocabulary Revision with Miss K | K S Lo English'
 seg = {s['kind']: s for s in SEGMENTS if s['kind'] != 'item'}
 chapters = [(0, 'Welcome'), (seg['part']['start'], f'Part 1: {PARTS[0][0].title()}')]
 if 'transition' in seg:
@@ -36,9 +29,9 @@ if 'transition' in seg:
 chapters.append((seg['conclusion']['start'], 'Wrap-up'))
 lists = '\n'.join(f"{k.title()} ({len(its)})\n" + ', '.join(i['headword'] for i in its) for k, its in PARTS)
 
-desc = f"""Revise the useful words and phrases from {topic} with Miss K, your virtual English tutor!
+desc = f"""Revise the useful words and phrases from {lvl} Unit {unit} with Miss K, your virtual English tutor!
 
-Look at each picture, use the first letters and the example sentence to guess the word or phrase, and say it aloud before the 3-second countdown ends. Then check your answer: Miss K says it for you, and you'll see its part of speech, Chinese meaning, definition and an example sentence.
+Look at each picture, use the first letters to guess the word or phrase, and say it aloud before the 3-second countdown ends. Then check your answer: Miss K says it for you, and you'll see its part of speech, Chinese meaning, definition and an example sentence.
 
 Made for {lvl} students of HKMA K S Lo College. Great for quick revision before a dictation, quiz or test.
 
@@ -60,6 +53,8 @@ Keep up the great work, K S Lo students!
 banned = ['ai ', 'a.i.', 'artificial', 'manus', 'generated', 'machine']
 low = (title + ' ' + desc).lower()
 assert not any(b in low for b in banned), 'banned wording in YouTube text'
+assert len(title) <= 100, 'YouTube title exceeds 100 characters; ask the teacher to approve a shorter title'
+assert len(desc) <= 5000, 'YouTube description exceeds 5000 characters; shorten it without dropping required items'
 os.makedirs(p('output'), exist_ok=True)
 out = p('output', 'youtube.md')
 open(out, 'w').write(f'# YouTube title\n\n{title}\n\n# YouTube description\n\n```\n{desc}```\n')

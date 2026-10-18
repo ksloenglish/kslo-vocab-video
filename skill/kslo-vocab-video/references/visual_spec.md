@@ -7,12 +7,12 @@
 | opening | 5.4 s + intro clip (15 s) | logo reveal in the centre (sting); logo rises into the centred lockup; at 5.4 s the lockup slides to the left-aligned column with a smaller logo, Miss K enters large on the right, and the name tag sits beside her. The unit appears only as text ("S2 · UNIT N" pill, header title) |
 | part 1 card | 2.4 s | "PART 1 · PHRASES", "N phrases to revise"; Miss K slides out to the right as it starts |
 | item | 8.6 s | see below |
-| pop-up | clip length + 0.3 s (4.3-5.3 s) | after every 5th item of a part (not after the last item of a part): Miss K slides in from the right, white speech bubble (headline in Bebas, second line in coral), "N of TOTAL done" with a segment progress bar, then slides out |
+| pop-up | clip length + 0.3 s (4.3-5.3 s) | after every 5th item of a part **only when at least three items remain in that same part**: Miss K slides in from the right, white speech bubble (glyph-fitted Bebas headline, coral subtitle), "N of TOTAL done" with a segment progress bar, then slides out |
 | transition | 0.8 + 6.0 + 1.0 s | Miss K slides in: "Great job with the phrases! Now let's try some words!"; Part 2 card "WORDS" |
 | conclusion | 0.8 + 12.0 + 1.0 s | Miss K slides in; "WELL DONE!", "You've revised all {N} words / and phrases from Unit N." and chips "13 phrases", "17 words" |
 | outro | 8.0 s | logo and "Thanks for revising with Miss K!" centred vertically; 3 s hold, 2 s eased fade to black, 1 s black |
 
-Unit 1 data in this format: 30 items, 5 pop-ups, 333.9 s (5:34). Each extra item adds 8.6 s.
+Compute total duration from the selected pop-ups in `timeline.py`. Each extra item adds 8.6 s; section lengths also determine which encouragement clips are permitted. Unit 2's 16 phrases and 14 words permit pop-ups after global items 5, 10, 21 and 26, never 15.
 
 ## Item screen layout (1920x1080)
 
@@ -33,21 +33,11 @@ the same place.
 
 ## Illustration prompt template (`generate_image`, aspect 16:9, 5 per call)
 
-> Pure illustration only: absolutely NO text, NO letters, NO words, NO numbers, NO captions, NO speech-bubble text, NO logos with lettering, NO watermark anywhere in the image. Any screens, signs, books, labels or papers must be blank or show only simple pictures and icons. Composition: wide 16:9 scene, the key action clearly readable at a glance in the centre of the frame, main characters fully visible and not cropped. Scene: {a concrete scene showing the meaning AS USED IN THE SAMPLE SENTENCE: who, doing what, where, with which visible cue. ALWAYS name at least one cute original companion creature here, with its look and type, e.g. "her small round fluffy yellow-and-blue electric-type companion creature", and give it a part in the action}. Vibrant Japanese anime illustration, cel-shaded with clean thick outlines, bright saturated colours, soft dynamic lighting, rich detailed background, expressive faces. Every scene includes at least one cute ORIGINAL fantasy pocket-monster-style companion creature, clearly visible and part of the action, in the spirit of 1990s monster-collecting anime, but entirely original designs that do not resemble any existing franchise character.
+**Read `illustration_style.md` and Section 3 of `/pokemon-vocab-cards` before generation.** Follow the Unit 1 co-star template: **a clear human participant plus a different prominent adorable original creature with a meaning-bearing role**, no forced human size/dominance, no tiny decorative pet, no actual franchise characters, text/symbols or card UI. Keep the surrounding video design unchanged.
 
-**Every illustration must have the Pokémon-like look: anime characters together with at least one original
-pocket-monster-style companion creature** (user requirement; the Unit 1 look). The style line alone is not enough. Unless
-the Scene names a creature, the model draws plain anime people. Unit 1 creatures, for variety: a round fluffy
-yellow-and-blue electric-type companion, a clever owl-like creature, a sleepy cat-like creature, an otter-like shopkeeper
-creature, leaf-sprout creatures, a fox-like creature in a cape. Vary species, colours and elemental types across items,
-and never reuse a real franchise design.
-Store each prompt in `items.json` `image_prompt`. Run `python3 $S/check_prompts.py` before generating; it fails any
-prompt without a creature, the no-text preamble or the style line, or with a franchise name. Save the images as `illus/NN_slug.png`. Abstract items need a visible cue
-taken from the sentence:
-- "irrelevant" ("Many people consider politics irrelevant to their lives"): a teenager enjoys their hobbies and shrugs, turning away from a TV political debate.
-- "no matter" ("No matter what type of online shop you visit, they're tracking your every click"): floating shop windows of every kind, each with a tiny spy creature watching the cursor.
+Store `image_prompt`, `creature_family`, `creature_signature`, `creature_role`, `human_creature_interaction`, `creature_scale_plan` and actual `style_reference_files` in `items.json`. Save artwork as `illus/NN_slug.png`, preferably 2560×1440. Keep both faces, the creature's distinctive silhouette and key action inside the safe area for the item's 6% zoom. Abstract meanings need contextual props, expressions and body language, not floating pictograms.
 
-See `templates/examples/unit1_items.json` for all 30 Unit 1 prompts.
+Approve three real-item co-star pilots before bulk generation, even with unchanged UI. Inspect every source image AND its 1100×619 card at beginning/maximum zoom; fill `work/illustration_review.json` with the policy-aware prominence/role/design/readability checks, then run `check_illustrations.py`. Inspect encoded item screens too. Unit 1 prompts are **legacy context only**, not permission to omit creatures or copy old optional-creature wording, symbols, bubbles or logo-like props.
 
 ## Mockups before visual changes (W1)
 
@@ -61,3 +51,17 @@ python3 $S/render.py test 2.0 4.8 8.5 <item1+5.0> <conclusion+3> <outro+1.5>    
 
 Crop or annotate the stills with PIL if needed (for example a close-up of the meaning card). Copy them to `output/mockups/`, link
 them in the message, and wait for approval.
+
+## Speech-bubble text safety (F7)
+
+Use `popup_layout.py`, shared by the renderer and the blocking preflight. Keep the bubble 1000×300 at (150,330).
+Measure and rasterize complete glyphs with bearing-aware guard pixels, then fit the headline to (64,48)-(936,166)
+and subtitle to (64,190)-(936,268), in bubble-local coordinates. Centre the actual ink, not the font advance width.
+For a headline without a subtitle, use (64,80)-(936,220). Reduce headline 128→72 px and subtitle 50→32 px as needed;
+if no readable size fits, raise `PopupTextOverflow`. Never solve overflow by clipping, ellipsis or deleting words.
+
+Run `python3 $S/check_popup_layout.py --stills` before render. It tests all six messages, punctuation, long-copy
+failure cases and the easing overshoot; it saves metrics and entry/overshoot/hold/exit images for every used pop-up
+in `work/popup_qa/`. Inspect every image, especially the full `YOU'RE DOING REALLY WELL.` headline. A single short
+"Great job!" preview is insufficient. Show corrected hold mockups for approval when changing this layout (W1).
+After encoding, inspect every pop-up again; an automated general video-analysis PASS cannot replace text-fit tests.

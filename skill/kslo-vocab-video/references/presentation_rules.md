@@ -19,6 +19,25 @@ For P7, give the user concrete options in the ask. For example, for "assist sb i
 "assist in"; (b) show "assist sb in doing sth" with blanks only on assist/in; (c) leave the item out. Record the
 answer in `items.json` `display` (and in `project.json` notes if it is a general rule).
 
+**Display-only ellipses (Unit 2 update, 2026-10-18):** Keep `display` as the spoken lexical form, and use optional
+`answer_display` for a different visual form. Set `display: "assist in"`, `answer_display: "assist ... in"`, and
+`display: "mistake for"`, `answer_display: "mistake ... for"`. Show the literal `...` in the main first-letter blanks
+and revealed answer; do not replace its dots with letter bars. Do not speak the ellipsis or change these approved
+recordings. Keep the original full headword on the meaning card and keep sample-sentence clues unchanged.
+
+**Approved Unit 3 cases (19 October 2026):** Set `display: "lighten mood"` and
+`answer_display: "lighten ... mood"`; keep literal dots throughout the countdown/reveal, the full
+`lighten sb's mood` headword on the card, and `lighten our mood` in the source sentence. For
+`self-disciplined`, retain one lexical word/word question, the literal hyphen and an initial for both
+components: `s _ _ _ - d _ _ _ _ _ _ _ _ _ _`. Main bars count missing letters; the sentence clue
+uses the same fixed-length blank after each initial (`s_____-d_____`). Use the tested hyphen-aware
+renderer. These approvals are recorded examples, not permission to guess a new P7 placeholder case.
+
+Preserve approved source wording, including `break sweat`, rather than silently adding an article;
+source US spellings are not automatically rewritten during an image/audio revision. Keep intervening
+sentence words outside discontinuous highlights: `get` / `addicted to` leaves `too` visible, and
+`developed` / `a` / `routine` leaves `fitness` visible. Check exact inflections before speaking-list approval.
+
 ## Meaning card (after the reveal)
 
 - Header: the **headword first, then the POS pill**, for example "sustainable (adj)". POS labels have **no full stop**: v / n / adj / adv / phr / prep. [V2, V3]
@@ -29,10 +48,14 @@ answer in `items.json` `display` (and in `project.json` notes if it is a general
 ## Illustrations (one per item, 16:9, 2560x1440, `illus/NN_slug.png`)
 
 Read the definition **and the sample sentence**, and depict that meaning in that context. For example, "feature" in
-"The market features local crafts" shows a market showcasing crafts, not a facial feature. Style: see the prompt
-template in `visual_spec.md`. **Every image has anime characters plus at least one original pocket-monster-style
-companion creature** (S2), so name the creature in each Scene. Generate in batches of 5 with `generate_image` (16:9) and review a contact sheet.
-Regenerate any image that shows text or letters, a franchise lookalike, no companion creature, or the wrong meaning.
+"The market features local crafts" shows a market showcasing crafts, not a facial feature. Read Section 3 of
+`/pokemon-vocab-cards` when available (otherwise bundled `original_creature_design.md`) and apply
+**`illustration_style.md`**: retain a central human and a prominent, meaning-bearing original co-star,
+not a tiny subordinate pet; use a different identity in each image. Do not copy card aspect ratio/UI or
+make creatures optional. Generate batches of up to 5 (16:9). Inspect each actual image and compare the set for
+genuine species/silhouette variety; correct missing/oversized companions, disliked reptilian forms, repeated
+mascots, text/symbols, franchise lookalikes or wrong context. Save fresh hash-bound visual checks to
+`work/illustration_review.json` and run `check_illustrations.py` before finalization.
 
 ## Clue sentence on the thinking screen (P8, added 2026-10-17)
 

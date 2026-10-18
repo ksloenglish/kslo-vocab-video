@@ -100,10 +100,22 @@ CLUE_BLANK = '_____'          # every blank in the clue sentence has the same le
 
 def blank_words(text):
     """'formulate strategies to' -> 'f_____ s_____ t_____'; one-letter words ('a') stay as they are."""
-    return ' '.join(w if len(w) == 1 else w[0] + CLUE_BLANK for w in text.split())
+    def blank_token(token):
+        # Hyphens are literal punctuation: give each alphabetic component its
+        # own first letter and the SAME fixed-length clue blank.
+        if '-' in token and any(ch.isalpha() for ch in token):
+            return '-'.join(blank_token(part) for part in token.split('-'))
+        return token if len(token) == 1 or not any(ch.isalpha() for ch in token) else token[0] + CLUE_BLANK
+    return ' '.join(blank_token(w) for w in text.split())
 
 
 BE_FORMS = {'be', 'is', 'am', 'are', 'was', 'were', 'been', 'being'}
+
+
+def highlight_index(text, highlight):
+    import re
+    match = re.search(r'(?<![A-Za-z])' + re.escape(highlight) + r'(?![A-Za-z])', text, re.I)
+    return match.start() if match else -1
 
 
 def clue_sentence(sent, highlights, display=''):
@@ -123,9 +135,7 @@ def clue_sentence(sent, highlights, display=''):
                 trimmed.append(' '.join(ws))
         hls = trimmed
     for hl in hls:
-        i = out.find(hl)
-        if i < 0:
-            i = out.lower().find(hl.lower())
+        i = highlight_index(out, hl)
         if i < 0:
             continue
         j = i + len(hl)
@@ -384,17 +394,18 @@ class Assets:
         c['img_big'] = big
         c['label'] = Txt(it['question'], font('semi', 36), GOLD)
         # fit blanks/answer
+        visual = it.get('answer_display', it['display'])
         size = 92
         while True:
             fb = font('bold', size)
-            bw = self._blank_width(it['display'], fb)
-            aw = fb.getlength(it['display'])
+            bw = self._blank_width(visual, fb)
+            aw = fb.getlength(visual)
             if max(bw, aw) <= 1270 or size <= 50:
                 break
             size -= 2
         c['size'] = size
-        c['blanks'] = self._blank_img(it['display'], font('bold', size))
-        c['answer'] = Txt(it['display'], font('bold', size), WHITE)
+        c['blanks'] = self._blank_img(visual, font('bold', size))
+        c['answer'] = Txt(visual, font('bold', size), WHITE)
         c['sentence'] = self._rich(it['sentence'], it['highlight'], 30, SENT_W)
         cs, chl = clue_sentence(it['sentence'], it['highlight'], it['display'])
         c['clue'] = self._rich(cs, chl, 30, SENT_W, clue=True)
@@ -410,10 +421,20 @@ class Assets:
         for wi, word in enumerate(display.split()):
             if wi:
                 x += WG
-            out.append(('t', x, word[0])); x += f.getlength(word[0])
-            for k in range(len(word) - 1):
-                x += LG if k == 0 else G
-                out.append(('u', x, U)); x += U
+            if not any(ch.isalpha() for ch in word):
+                out.append(('t', x, word)); x += f.getlength(word)
+                continue
+            components = word.split('-')
+            for ci, component in enumerate(components):
+                if ci:
+                    out.append(('t', x, '-')); x += f.getlength('-')
+                if not any(ch.isalpha() for ch in component):
+                    out.append(('t', x, component)); x += f.getlength(component)
+                    continue
+                out.append(('t', x, component[0])); x += f.getlength(component[0])
+                for k in range(len(component) - 1):
+                    x += LG if k == 0 else G
+                    out.append(('u', x, U)); x += U
         return out, x
 
     def _blank_width(self, display, f):
@@ -448,9 +469,7 @@ class Assets:
             return f.getlength(s.replace(CLUE_BLANK, '')) + s.count(CLUE_BLANK) * bw
         mask = [False] * len(sent)
         for hl in highlights:
-            i = sent.find(hl)
-            if i < 0:
-                i = sent.lower().find(hl.lower())
+            i = highlight_index(sent, hl)
             if i >= 0:
                 for j in range(i, i + len(hl)):
                     mask[j] = True
@@ -1157,6 +1176,8 @@ def draw_badge(fr, t, cx, cy, speak=0.0, op=1.0):
         B['cap'].draw_center(fr, cx, ty, (1 - speak) * op)
 
 
+from popup_layout import BUBBLE_W, BUBBLE_H, BUBBLE_X, BUBBLE_Y, build_popup_text, validate_popup_lines
+
 POP = {}
 
 
@@ -1169,24 +1190,16 @@ def render_popup(seg, t, g, fidx):
     k = eo(prog(t, 0.0, 0.45)) * (1 - eio(prog(t, D - 0.55, D - 0.05)))
     key_ = seg['pop']
     if key_ not in POP:
-        line = POP_LINES[key_]
-        if '! ' in line:
-            a_, b_ = line.split('! ', 1); a_ += '!'
-        elif '. ' in line:
-            a_, b_ = line.split('. ', 1); a_ += '.'
-        else:
-            a_, b_ = line, ''
-        POP[key_] = (Txt(a_.upper(), font('bebas', 128), NAVY_TXT), Txt(b_, font('bold', 50), CORAL) if b_ else None)
+        POP[key_], _ = build_popup_text(POP_LINES[key_], font, NAVY_TXT, CORAL)
     if 'bub' not in POP:
-        bw, bh = 1000, 300
+        bw, bh = BUBBLE_W, BUBBLE_H
         POP['bub'] = rounded((bw, bh), 40, (255, 255, 255, 236))
         tail = Image.new('RGBA', (80, 80), (0, 0, 0, 0))
         ImageDraw.Draw(tail).polygon([(0, 0), (80, 30), (0, 70)], fill=(255, 255, 255, 236))
         POP['tail'] = tail
         POP['sh'] = shadow_sprite((bw, bh), 40, 26, 120)
-    t1, t2 = POP[key_]
     bw, bh = POP['bub'].size
-    bx, by = 150, 330
+    bx, by = BUBBLE_X, BUBBLE_Y
     bp = eback(clamp(prog(t, 0.25, 0.75))) if t < 0.75 else 1.0
     bop = clamp(prog(t, 0.25, 0.5)) * (1 - prog(t, D - 0.6, D - 0.2))
     if bop > 0:
@@ -1196,10 +1209,7 @@ def render_popup(seg, t, g, fidx):
         layer.alpha_composite(shs, (max(0, 40 - shp), max(0, 40 - shp + 12)))
         layer.alpha_composite(POP['bub'], (40, 40))
         layer.alpha_composite(POP['tail'], (40 + bw - 6, 40 + 150))
-        dl = Txt.PAD
-        t1.draw(layer, 40 + bw / 2 - t1.w / 2, 40 + (40 if t2 else 86), 1.0)
-        if t2:
-            t2.draw(layer, 40 + bw / 2 - t2.w / 2, 40 + 190, 1.0)
+        layer.alpha_composite(POP[key_], (40, 40))
         paste_scaled(fr, layer, bx - 40 + (bw + 120) / 2, by - 40 + (bh + 80) / 2, sc, bop)
         pr = Txt(f'{n_done} of {N_TOTAL} done', font('semi', 30), DIM)
         pr.draw_center(fr, bx + bw / 2, by + bh + 50, bop)
@@ -1247,6 +1257,7 @@ def render_segment(i):
 
 
 if __name__ == '__main__':
+    validate_popup_lines(POP_LINES, font)
     mode = sys.argv[1]
     if mode == 'test':
         A = Assets()
